@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ImageCard from './components/ImageCard';
 import ImageSearch from './components/ImageSearch';
-import SkeletonCard from './components/SkeletonCard'
+import SkeletonCard from './components/SkeletonCard';
 
 function App() {
   const [images, setImages] = useState([]);
@@ -12,17 +12,17 @@ function App() {
     fetch(
       `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&image_type=photo&pretty=true`
     )
-      .then((res) => res.json())
-      .then((data) => {
+      .then(res => res.json())
+      .then(data => {
         setTimeout(() => {
           setImages(data.hits);
-        setIsLoading(false);
-        }, 3000)
+          setIsLoading(false);
+        }, 3000);
       })
-      .catch((err) => console.log(err));
+      .catch(err => console.log(err));
   }, [term]);
 
-  const searchText = (text) => {
+  const searchText = text => {
     setTerm(text);
   };
 
@@ -38,8 +38,7 @@ function App() {
         <SkeletonCard />
       ) : (
         <div className='grid grid-cols-3 gap-4'>
-          {images &&
-            images.map((img) => <ImageCard key={img.id} image={img} />)}
+          {images && images.map(img => <ImageCard key={img.id} image={img} />)}
         </div>
       )}
     </div>
