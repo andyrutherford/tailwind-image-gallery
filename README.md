@@ -2,7 +2,7 @@
 
 A tailwind image gallery of photos from [pixabay](https://pixabay.com/). Uses skeleton components while loading.
 
-<img src="./img/screenshot.jpg" width="800">
+<img src="./img/screenshot.gif">
 
 ## Setup
 
@@ -30,6 +30,8 @@ $ npm start
 - [Pixabay API](https://pixabay.com/) - Stunning free images & royalty free stock
 
 ## Demo
+
+https://tailwind-image-gallery.netlify.app/
 
 ## License
 

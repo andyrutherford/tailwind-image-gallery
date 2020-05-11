@@ -9,6 +9,7 @@ function App() {
   const [term, setTerm] = useState('');
 
   useEffect(() => {
+    setIsLoading(true);
     fetch(
       `https://pixabay.com/api/?key=${process.env.REACT_APP_PIXABAY_API_KEY}&q=${term}&image_type=photo&pretty=true`
     )
@@ -17,7 +18,7 @@ function App() {
         setTimeout(() => {
           setImages(data.hits);
           setIsLoading(false);
-        }, 3000);
+        }, 2000);
       })
       .catch(err => console.log(err));
   }, [term]);
